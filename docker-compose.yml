@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: postgres_db
+      POSTGRES_USER: postgres_user
+      POSTGRES_PASSWORD: postgres_password
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - 5428:5432
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data/pgdata
+#      - ./src/main/resources/db/migration/V1_init.sql:/docker-entrypoint-initdb.d/init.sql
+#      - ./schemas:/schemas
