@@ -27,14 +27,12 @@ public class UserController {
     }
 
     @GetMapping("/get/{id}")
-    @ResponseStatus(HttpStatus.OK)
     public UserDTO getUserById(@PathVariable Long id) {
         User user = userService.getUserById(id);
         return new UserDTO(user.getId(), user.getUsername());
     }
 
     @GetMapping("/getProduct/{id}")
-    @ResponseStatus(HttpStatus.OK)
     public UserProductsDTO getByIdWithProducts(@PathVariable Long id) {
         User user = userService.getByIdWithProducts(id);
         Set<Product> products = user.getProducts();
