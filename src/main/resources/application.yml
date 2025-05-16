@@ -1,3 +1,7 @@
+server:
+  servlet:
+    context-path: /
+  port: 8181
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5428/postgres_db
