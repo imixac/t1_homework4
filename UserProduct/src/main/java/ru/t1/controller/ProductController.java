@@ -20,7 +20,6 @@ public class ProductController {
     @GetMapping("/get/{id}")
     public ProductDTO getProductById(@PathVariable Long id) {
         return productService.getProductById(id);
-//        return new ProductDTO(product.getId(), product.getAccountNumber(), product.getBalance(), product.getProductType());
     }
 
     @GetMapping("/get-all-product-byuser/{id}")
@@ -34,7 +33,6 @@ public class ProductController {
     }
 
     @PostMapping("/update")
-    @ResponseStatus(HttpStatus.OK)
     public void updateProduct(@RequestBody ProductDTO productDTO) {
         productService.updateProduct(productDTO);
     }

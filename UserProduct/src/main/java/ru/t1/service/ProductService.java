@@ -23,7 +23,7 @@ public class ProductService {
     public ProductDTO getProductById(Long id) {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Product not found: " + id));
-        return new ProductDTO(product.getId(), product.getAccountNumber(), product.getBalance(), product.getProductType());
+        return new ProductDTO(product.getId(), product.getAccountNumber(), product.getBalance(), product.getProductType(), product.getUserId());
     }
 
     public Set<Product> getAllProductsById(Long id) {

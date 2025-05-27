@@ -17,7 +17,7 @@ public class ApplicationConfig {
 
     @Bean
     public RestTemplate userProduct(RestTemplateResponseErrorHandler errorHandler) {
-        RestTemplateProperties restTemplateProperties = userProductProperties.getUserProduct();
+        RestTemplateProperties restTemplateProperties = userProductProperties.getRestTemplateProperties();
         return new RestTemplateBuilder()
                 .rootUri(restTemplateProperties.getUrl())
                 .readTimeout(restTemplateProperties.getReadTimeout())

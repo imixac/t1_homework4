@@ -23,11 +23,7 @@ public class User {
     @Column(name = "username")
     private String username;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "userId")
     private Set<Product> products;
 
-//    @Override
-//    public String toString() {
-//        return "User [id=" + id + ", username=" + username + ", products=" + products + "]";
-//    }
 }

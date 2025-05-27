@@ -23,15 +23,10 @@ public class UserService {
         userRepository.save(newUser);
     }
 
-//    public User getUserById(Long id) {
-//        return userRepository.findById(id).orElse(null);
-//    }
-
     public UserDTO getUserById(Long id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("User not found: " + id));
         return new UserDTO(user.getId(), user.getUsername());
-//        return userRepository.findById(id).orElse(null);
     }
 
     public UserDTO getUserByUsername(String username) {

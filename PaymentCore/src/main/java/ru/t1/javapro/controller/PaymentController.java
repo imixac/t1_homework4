@@ -38,14 +38,8 @@ public class PaymentController {
     }
 
     @PostMapping("/pay")
-    public ResponseMessage pay(@RequestBody PayDTO payDTO) {
-        ProductDTO product = paymentsService.callGetProduct(payDTO.id());
-        Float diff = Float.parseFloat(product.balance()) - Float.parseFloat(payDTO.sum());
-        if (diff >= 0) {
-            ProductDTO productDTO = new ProductDTO(product.id(), product.accountNumber(), String.valueOf(diff), product.productType());
-            paymentsService.updateProduct(productDTO);
-            return new ResponseMessage("Оплата прошла");
-        } return new ResponseMessage("Не достаточно на балансе");
+    public boolean pay(@RequestBody PayDTO payDTO) {
+        return paymentsService.payWithIdAndSum(payDTO);
     }
 
 }

@@ -26,11 +26,6 @@ public class Product {
     @Column(name = "product_type")
     private String productType;
 
-//    @ManyToOne
-//    @JoinColumn(name = "user_id")
-//    private User user;
-
     @Column(name = "user_id")
-    private Long user;
-
+    private Long userId;
 }
